@@ -1,0 +1,10 @@
+{
+    "username": "student",
+    "password": "Password123",
+    "invalidUsername": "invalidUser",
+    "invalidPassword": "invalidPassword",
+    "loginSuccessMessage": "Logged In Successfully",
+    "usernameErrorMessage": "Your username is invalid!",
+    "passwordErrorMessage": "Your password is invalid!",
+    "url": "practicetestautomation.com/logged-in-successfully/"
+}
