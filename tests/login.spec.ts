@@ -17,7 +17,7 @@ test.describe("Login Tests", async () => {
     expect(page.url()).toContain(loginData.url);
     await expect(loginPage.logoutButton()).toBeVisible();
   });
-
+//login with invalid credentials - username and password
   test("Login with invalid creds  - Username ", async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.username().fill(loginData.invalidUsername);
