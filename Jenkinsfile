@@ -1,5 +1,5 @@
 
-pipeline {
+/*pipeline {
     agent any
 
     stages {
@@ -44,6 +44,41 @@ pipeline {
 
         failure {
             echo 'Playwright tests failed!'
+        }
+    }
+}*/
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'Node-24 3.'
+    }
+
+    stages {
+        stage('Check Node Version') {
+            steps {
+                sh 'which node'
+                sh 'node --version'
+                sh 'npm --version'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
+        stage('Install Playwright Browsers') {
+            steps {
+                sh 'npx playwright install chromium'
+            }
+        }
+
+        stage('Run Playwright Tests') {
+            steps {
+                sh 'npx playwright test --project=chromium'
+            }
         }
     }
 }
