@@ -25,7 +25,7 @@ tools {
 
         stage('Run Playwright Tests') {
             steps {
-                sh 'npx playwright test'
+                sh 'npx playwright test --project=chromium'
             }
         }
     }
